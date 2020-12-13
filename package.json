@@ -1,14 +1,14 @@
 {
-  "name": "node-chat-app",
+  "name": "geonode-node-sample",
   "version": "0.1.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "mohamed.fathi",
-  "license": "ISC",
+  "author": "Cartologic",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.0",
     "bcrypt": "^5.0.0",

@@ -23,7 +23,7 @@ exports.login = async (req, res, next) => {
       const profileResponse = await axios.get("api/profiles/", {
         params: { username },
       });
-      
+
       const requestedProfile = profileResponse.data.objects[0];
       req.session.accessToken = authenticationResponse.data.access_token;
       req.session.refreshToken = authenticationResponse.data.refresh_token;
@@ -57,9 +57,6 @@ exports.logout = async (req, res, next) => {
     token: req.session.accessToken,
   };
   try {
-    // await axios.post("o/revoke_token/", qs.stringify(logoutRequestBody), {
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    // });
     req.session.destroy(() => {
       return res.redirect("/login");
     });
