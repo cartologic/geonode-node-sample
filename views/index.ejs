@@ -1,0 +1,19 @@
+<%- include('parts/header')%>
+<%- include('components/navbar')%>
+
+<div class="title container">
+  <h5>Layers(<%= layers.length %>)</h5>
+</div>
+
+<div class="screen">
+  <div class="layers-list container">
+    <% for (let layer of layers) { %>
+        <img class="layer-image" src="<%= layer.thumbnail %>">
+    <% } %>
+  </div>
+</div>
+
+<%- include('parts/scripts')%>
+
+</body>
+</html>

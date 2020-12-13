@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img
+        src="images/brand-logo.png"
+        alt="cartologic"
+        class="img-responsive"
+      />
+    </a>
+    <% if(currentUser) { %>
+    <div class="dropdown">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle user-action"
+        ><img src="<%= currentUser.avatar %>" class="avatar" alt="Avatar" />
+        <%= currentUser.firstName %>&nbsp;<%= currentUser.lastName %>
+        <b class="caret"></b
+      ></a>
+      <ul class="dropdown-menu">
+        <li class="divider"></li>
+        <li>
+          <form action="/logout" method="/logout">
+            <button type="submit" class="btn bg-transparent">
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+              Logout
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+
+    <% } else { %>
+    <a href="/login"><i class="fa fa-user-o"></i> Login</a>
+    <% } %>
+  </div>
+</nav>
