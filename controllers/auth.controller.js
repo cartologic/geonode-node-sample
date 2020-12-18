@@ -20,13 +20,14 @@ exports.login = async (req, res, next) => {
         qs.stringify(authenticationRequestBody),
         { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
       );
+      req.session.accessToken = authenticationResponse.data.access_token;
+      req.session.refreshToken = authenticationResponse.data.refresh_token;
+      
       const profileResponse = await axios.get("api/profiles/", {
         params: { username },
       });
-      
+
       const requestedProfile = profileResponse.data.objects[0];
-      req.session.accessToken = authenticationResponse.data.access_token;
-      req.session.refreshToken = authenticationResponse.data.refresh_token;
       req.session.currentUser = {
         username,
         firstName: requestedProfile.first_name,
