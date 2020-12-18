@@ -58,9 +58,6 @@ exports.logout = async (req, res, next) => {
     token: req.session.accessToken,
   };
   try {
-    // await axios.post("o/revoke_token/", qs.stringify(logoutRequestBody), {
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    // });
     req.session.destroy(() => {
       return res.redirect("/login");
     });

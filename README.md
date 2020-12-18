@@ -1,7 +1,7 @@
 # GeoNode Node Sample
 
 > This repo is a sample of how you can allow GeoNode to act as an OAuth2 Provider for a Node.js application.
-![readme-5](./assets/images/geonode.sample.gif)
+> ![readme-5](./assets/images/geonode.sample.gif)
 
 # Target Audience
 
@@ -23,14 +23,13 @@ Please follow the below steps (on master branch to complete the workshop):
 
 > Make sure that you have MongoDB installed on your machine as we use it to store session data (access token & user information).
 
-
 1. Launch your browser and open it to where your GeoNode instance is running on.
 
 2. Login to GeoNode as admin.
 
-3. From the Admin deropdown at the right corner of your navbar Access the Admin panel.
+3. From the Admin dropdown at the right corner of your navbar, access the Admin panel.
 
-4. From the Admin panel Head over to `Django OAuth Toolkit` section and access Applications
+4. From the admin panel head over to `Django OAuth Toolkit` section and access Applications
    ![readme-1](./assets/images/readme-1.jpg)
 
 5. From there click Add Application button at the right top-right cornner.
@@ -46,7 +45,7 @@ Please follow the below steps (on master branch to complete the workshop):
 
    ![readme-3](./assets/images/readme-3.jpg)
 
-7. Clone/Download the code from the repo https://github.com/mofath/geonode-node.js-sample.
+7. Clone/Download the code from the repo [https://github.com/cartologic/geonode-node-sample](https://github.com/cartologic/geonode-node-sample).
 
 8. Open the code in your IDE and open the file `config.js` module.
 
@@ -73,8 +72,4 @@ You should have the app up and running in your browser at `http://localhost:5000
 
 12. For authorization,check the `login` middleware at `controllers/auth.controller.js`, notice that the login request returns token that we store in session and send it with at the headers of request that is responsible for retrieving layers at `routes/views.route.js` at line `19`.
 
-> Notice, that before login and attaching token to the request that responsible for retrieving layers, only 6 layers have been retrieved and after login and attaching token 7 layers have been retrieved, as there's one layer that's could only be accessed by authorized login.
-
-
-
-
+> Notice, that before login and attaching token to the request that responsible for retrieving layers, a certain number of layers has been retrieved and after login and attaching the token the umber of layers will increase, those layers are only accessed by that authorized user.
