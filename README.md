@@ -15,7 +15,7 @@ A basic knowledge of the following is needed to proceed with the tutorial:
 1. Node
 2. EJS template engine
 
-Please follow the below steps (on master branch to complete the workshop):
+Please follow the below steps:
 
 > The GeoNode instance you're using must have the CORS enabled for this to work.
 
